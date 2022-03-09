@@ -1,13 +1,13 @@
-import './home.scss'
-
 import sortSVG from '../../assets/img/sort.svg'
+
+import Card from '../../components/card/Card'
 
 const Home = () => {
    return (
       <div className="home">
          <div className="home__container">
             <div className="home__content-top">
-               <ul className="categories">
+               <ul className="home__categories categories">
                   <li className="categories__item categories__item--active">Все</li>
                   <li className="categories__item">Мясные</li>
                   <li className="categories__item">Вегетарианская</li>
@@ -28,6 +28,19 @@ const Home = () => {
                         <li className="sort__item">по алфавиту</li>
                      </ul>
                   </div>
+               </div>
+            </div>
+            <div className="home__content">
+               <h1>Все пиццы</h1>
+               <div className="home__cards cards">
+                  <Card/>
+                  <Card/>
+                  <Card/>
+                  <Card/>
+                  <Card/>
+                  <Card/>
+                  <Card/>
+                  <Card/>
                </div>
             </div>
          </div>

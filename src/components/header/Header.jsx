@@ -1,5 +1,3 @@
-import './header.scss'
-
 import logo from '../../assets/img/logo.svg'
 import cart from '../../assets/img/cart.svg'
 
