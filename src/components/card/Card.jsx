@@ -1,5 +1,6 @@
 import pizza from '../../assets/img/pizza1.jpg'
 import plus_off from '../../assets/img/plus-white.svg'
+import plus_on from '../../assets/img/plus-orange.svg'
 
 const Card = () => {
    return (
@@ -19,9 +20,16 @@ const Card = () => {
          </div>
          <div className="card__total">
             <b>от 395 р.</b>
-            <button>
+            {/* <button className="btn-add">
                <img src={plus_off} alt="add" />
                <span>Добавить</span>
+            </button> */}
+            <button className="btn-added">
+               <img src={plus_on} alt="added" />
+               <span>Добавить</span>
+               <div className="btn-added__count">
+                  <span>2</span>
+               </div>
             </button>
          </div>
       </div>
