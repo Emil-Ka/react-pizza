@@ -12,12 +12,12 @@ const Header = () => {
                   <p>самая вкусная пицца во вселенной</p>
                </div>
             </div>
-            <button className="header__btn">
+            <a href="#" className="header__btn">
                <span className="header__price">520 р.</span>
                <div className="header__line"></div>
                <img src={cart} alt="cart"/>
                <span>3</span>
-            </button>
+            </a>
          </div>
       </header>
    )
