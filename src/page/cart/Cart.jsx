@@ -1,4 +1,4 @@
-import CartHeader from "../../components/cartHeader/CartHeader"
+import CartHeader from "../../components/CartHeader"
 
 const Cart = () => {
    return (

@@ -1,12 +1,11 @@
-import Layout from '../components/layout/Layout'
-import Header from '../components/header/Header'
+import Layout from '../components/Layout'
+import Header from '../components/Header'
 import Home from '../page/home/Home'
 
 const App = () => {
    return (
       <Layout>
          <div className="app">
-            <Header/>
             <Home/>
          </div>
       </Layout>

@@ -1,50 +1,47 @@
-import sortSVG from '../../assets/img/sort.svg'
+import {useEffect, useState} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import axios from 'axios'
 
-import Card from '../../components/card/Card'
+import Card from '../../components/Card'
+import Header from '../../components/Header'
+import Categories from '../../components/Categories'
+import Sort from '../../components/Sort'
 
 const Home = () => {
+   const _url = 'http://localhost:3001/pizzas'
+   const dispatch = useDispatch()
+   const store = useSelector(state => state)
+   const [pizzas, setPizzas] = useState([])
+
+   useEffect(async () => {
+      await axios.get(_url)
+         .then(res => setPizzas(res.data))
+   }, [])
+
    return (
-      <div className="home">
-         <div className="home__container">
-            <div className="home__content-top">
-               <ul className="home__categories categories">
-                  <li className="categories__item categories__item--active">Все</li>
-                  <li className="categories__item">Мясные</li>
-                  <li className="categories__item">Вегетарианская</li>
-                  <li className="categories__item">Гриль</li>
-                  <li className="categories__item">Острые</li>
-                  <li className="categories__item">Закрытые</li>
-               </ul>
-               <div className="sort">
-                  <div className="sort__label">
-                     <img src={sortSVG} alt="sort"/>
-                     <b>Сортировка по:</b>
-                     <span>популярности</span>
-                  </div>
-                  <div className="sort__popup">
-                     <ul>
-                        <li className="sort__item sort__item--active">по популярности</li>
-                        <li className="sort__item">по цене</li>
-                        <li className="sort__item">по алфавиту</li>
-                     </ul>
-                  </div>
+      <>
+         <Header/>
+         <div className="home">
+            <div className="home__container">
+               <div className="home__content-top">
+                  <Categories/>
+                  <Sort/>
                </div>
-            </div>
-            <div className="home__content">
-               <h1>Все пиццы</h1>
-               <div className="home__cards cards">
-                  <Card/>
-                  <Card/>
-                  <Card/>
-                  <Card/>
-                  <Card/>
-                  <Card/>
-                  <Card/>
-                  <Card/>
+               <div className="home__content">
+                  <h1>Все пиццы</h1>
+                  <div className="home__cards cards">
+                     {
+                        pizzas.map((item, i) => (
+                           <Card 
+                              key={item.id}
+                              pizzas={pizzas[i]}/>
+                        ))
+                     }
+                  </div>
                </div>
             </div>
          </div>
-      </div>
+      </>
    )
 }
 

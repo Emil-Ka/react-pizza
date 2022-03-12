@@ -38,6 +38,7 @@
       letter-spacing: 0.015em;
       color: #2C2C2C;
       cursor: pointer;
+      transition: background .3s ease-in-out, color .3s ease-in-out;
 
       &--active {
          background: #282828;
@@ -66,6 +67,19 @@
          letter-spacing: 0.015em;
          color: #FE5F1E;
          border-bottom: 1px dashed #FE5F1E;
+         cursor: pointer;
+      }
+   }
+
+   &__icon {
+      cursor: pointer;
+      transform: rotate(0deg);
+      transition: transform .2s ease-in-out;
+
+      &--active {
+         cursor: pointer;
+         transform: rotate(180deg);
+         transition: transform .2s ease-in-out;
       }
    }
 
@@ -85,14 +99,19 @@
       letter-spacing: 0.015em;
       color: #000000;
       padding: 10px 16px;
+      cursor: pointer;
 
       &--active {
-         background: rgba(254, 95, 30, 0.05);
+         background: rgba(254, 95, 30, 0.1);
          font-weight: bold;
          font-size: 14px;
          line-height: 17px;
          letter-spacing: 0.015em;
          color: #FE5F1E;
+      }
+
+      &:hover {
+         background: rgba(254, 95, 30, 0.05);
       }
    }
 }
