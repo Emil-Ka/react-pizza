@@ -8,20 +8,20 @@ export const fetchPizzas = (url) => async (dispatch) => {
 }
 
 export const pizzasFetching = () => {
-   return {
-      type: 'PIZZAS_FETCHING'
-   }
+  return {
+    type: 'PIZZAS_FETCHING'
+  }
 }
 
 export const pizzasFetched = (pizzas) => {
-   return {
-      type: 'PIZZAS_FETCHED',
-      payload: pizzas
-   }
+  return {
+    type: 'PIZZAS_FETCHED',
+    payload: pizzas
+  }
 }
 
 export const pizzasFetchingError = () => {
-   return {
-      type: 'PIZZAS_FETCHING_ERROR'
-   }
+  return {
+    type: 'PIZZAS_FETCHING_ERROR'
+  }
 }
