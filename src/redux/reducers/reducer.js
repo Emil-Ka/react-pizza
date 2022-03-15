@@ -1,8 +1,10 @@
 const initialState = {
   pizzas: [],
+  filteredPizzas: [],
   pizzasLoadingStatus: 'idle',
   cart: [],
-  cartLoadingStatus: 'idle'
+  cartLoadingStatus: 'idle',
+  categoryIndex: 0
 }
 
 const reducer = (state = initialState, action) => {
@@ -43,6 +45,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         cart: [...state.cart, action.payload]
+      }
+    case 'SET_CATEGORY':
+      return {
+        ...state,
+        categoryIndex: action.payload,
+        filteredPizzas: state.pizzas
       }
   }
 }

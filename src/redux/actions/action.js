@@ -59,3 +59,10 @@ export const cartUpdate = async (url, data) => {
     payload: data
   }
 }
+
+export const setCategory = (categoryIndex) => {
+  return {
+    type: 'SET_CATEGORY',
+    payload: categoryIndex
+  }
+}

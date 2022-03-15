@@ -1,21 +1,24 @@
 import {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+
+import {setCategory} from '../redux/actions/action'
 
 const Categories = () => {
   const categoriesItems = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
-  const [activeItem, setActiveItem] = useState(0)
+  const dispatch = useDispatch()
+  const activeCategoryIndex = useSelector(state => state ? state.categoryIndex : null)
 
-  const toggleActiveItem = (index) => {
-    setActiveItem(prev => index)
-  }
+  console.log(activeCategoryIndex)
+
 
   return (
     <ul className="home__categories categories">
         {
           categoriesItems.map((item, i) => (
               <li 
-                className={`${activeItem === i ? 'categories__item--active' : null} categories__item`}
+                className={`${activeCategoryIndex === i ? 'categories__item--active' : null} categories__item`}
                 key={i}
-                onClick={() => toggleActiveItem(i)}>
+                onClick={() => dispatch(setCategory(i))}>
                 {item}
               </li>
           ))

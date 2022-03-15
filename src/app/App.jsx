@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 import Header from '../components/Header'
-import Home from '../page/home/Home'
+import Home from '../page/Home'
 
 const App = () => {
   return (
