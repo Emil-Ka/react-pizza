@@ -1,16 +1,16 @@
 import classNames from 'classnames'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import { v4 as uuidv4 } from 'uuid'
 
 const Card = (pizzas) => {
   const [doughIndex, setDoughIndex] = useState(null)
   const [diameterIndex, setDiameterIndex] = useState(null)
-  const [countInCart, setCountInCart] = useState(0)
 
   const {imageUrl, name, price, sizes, types, id} = pizzas.pizzas
   const doughLabel = ['тонкое', 'традиционное']
   const diameterLabel = ['26 см.', '30 см.', '40 см.']
-  const CART_API = 'http://localhost:3001/cart'
+  const CART_API = 'http://localhost:3001/cart/'
 
   const onChangeDough = (index) => {
     setDoughIndex(prev => {
@@ -32,27 +32,23 @@ const Card = (pizzas) => {
     })
   }
 
-  const changeCountInCart = (data) => {
-    console.log(data)
-  }
-
   const onAddCartItem = async (e) => {
-    e.preventDefault()
-    const newCartItem = {
-        id,
-        imageUrl,
-        name,
-        price,
-        doughLabel: doughLabel[doughIndex],
-        diameterLabel: diameterLabel[diameterIndex]
+    if (diameterIndex !== null && doughIndex !== null) {
+      e.preventDefault()
+      const newCartItem = {
+          id: uuidv4(),
+          imageUrl,
+          name,
+          price,
+          doughLabel: doughLabel[doughIndex],
+          diameterLabel: diameterLabel[diameterIndex]
+      }
+
+      await axios.post(CART_API, newCartItem)
+
+      setDiameterIndex(null)
+      setDoughIndex(null)
     }
-
-    await axios.post(CART_API, newCartItem)
-    setDiameterIndex(null)
-    setDoughIndex(null)
-
-    await axios.get(CART_API)
-          .then(res => console.log(res.data))
   }
 
   return (
