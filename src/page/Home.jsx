@@ -12,10 +12,15 @@ const Home = () => {
   const PIZZAS_API = 'http://localhost:3001/pizzas'
   const CART_API = 'http://localhost:3001/cart'
   const dispatch = useDispatch()
-  const pizzas = useSelector(state => state ? state.pizzas : [])
-  // const categoryIndex = useSelector(state => state ? state.categoryIndex : 0)
-  //const filteredPizzas = useSelector(state => state ? state.filteredPizzas : [])
-  console.log(pizzas[0])
+  const pizzas = useSelector(state => {
+    if (state) {
+      return state.pizzas.filter(item => item.categories.includes(state.categoryIndex))
+    }
+    return []
+  })
+
+  const categoriesItems = useSelector(state => state ? state.categoriesItems : [])
+  const categoryIndex = useSelector(state => state ? state.categoryIndex : 0)
 
   useEffect(() => {
     dispatch(fetchPizzas(PIZZAS_API))
@@ -32,7 +37,7 @@ const Home = () => {
                 <Sort/>
               </div>
               <div className="home__content">
-                <h1>Все пиццы</h1>
+                <h1>{categoriesItems[categoryIndex]} пиццы</h1>
                 <div className="home__cards cards">
                     {
                       pizzas.map((item, i) => (

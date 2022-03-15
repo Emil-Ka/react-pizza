@@ -4,7 +4,8 @@ const initialState = {
   pizzasLoadingStatus: 'idle',
   cart: [],
   cartLoadingStatus: 'idle',
-  categoryIndex: 0
+  categoryIndex: 0,
+  categoriesItems: ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
 }
 
 const reducer = (state = initialState, action) => {
@@ -49,8 +50,7 @@ const reducer = (state = initialState, action) => {
     case 'SET_CATEGORY':
       return {
         ...state,
-        categoryIndex: action.payload,
-        filteredPizzas: state.pizzas
+        categoryIndex: action.payload
       }
   }
 }

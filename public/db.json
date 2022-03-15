@@ -14,7 +14,10 @@
         40
       ],
       "price": 803,
-      "categories": [0, 4],
+      "categories": [
+        0,
+        4
+      ],
       "rating": 4
     },
     {
@@ -31,7 +34,9 @@
         40
       ],
       "price": 245,
-      "categories": [0],
+      "categories": [
+        0
+      ],
       "rating": 6
     },
     {
@@ -48,7 +53,10 @@
         40
       ],
       "price": 295,
-      "categories": [0, 1],
+      "categories": [
+        0,
+        1
+      ],
       "rating": 4
     },
     {
@@ -65,7 +73,10 @@
         40
       ],
       "price": 275,
-      "categories": [0, 1],
+      "categories": [
+        0,
+        1
+      ],
       "rating": 2
     },
     {
@@ -82,7 +93,10 @@
         40
       ],
       "price": 415,
-      "categories": [0, 3],
+      "categories": [
+        0,
+        3
+      ],
       "rating": 8
     },
     {
@@ -99,7 +113,10 @@
         40
       ],
       "price": 580,
-      "categories": [0, 4],
+      "categories": [
+        0,
+        4
+      ],
       "rating": 2
     },
     {
@@ -116,7 +133,9 @@
         40
       ],
       "price": 675,
-      "categories": [0],
+      "categories": [
+        0
+      ],
       "rating": 9
     },
     {
@@ -133,7 +152,9 @@
         40
       ],
       "price": 450,
-      "categories": [0],
+      "categories": [
+        0
+      ],
       "rating": 10
     },
     {
@@ -150,7 +171,10 @@
         40
       ],
       "price": 395,
-      "categories": [0, 1],
+      "categories": [
+        0,
+        1
+      ],
       "rating": 10
     },
     {
@@ -167,9 +191,21 @@
         40
       ],
       "price": 285,
-      "categories": [0, 2],
+      "categories": [
+        0,
+        2
+      ],
       "rating": 7
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "fd23f4f7-de67-4ec3-a807-ca3da1b5e27a",
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Чизбургер-пицца",
+      "price": 415,
+      "doughLabel": "традиционное",
+      "diameterLabel": "30 см."
+    }
+  ]
 }
