@@ -39,6 +39,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         cartLoadingStatus: 'error'
       }
+    case 'CART_UPDATE':
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      }
   }
 }
 

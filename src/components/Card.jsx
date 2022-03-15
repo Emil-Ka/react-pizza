@@ -1,9 +1,14 @@
 import classNames from 'classnames'
 import {useState, useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 
+import {cartUpdate} from '../redux/actions/action'
+
 const Card = (pizzas) => {
+  const dispatch = useDispatch()
+
   const [doughIndex, setDoughIndex] = useState(null)
   const [diameterIndex, setDiameterIndex] = useState(null)
 
@@ -44,7 +49,7 @@ const Card = (pizzas) => {
           diameterLabel: diameterLabel[diameterIndex]
       }
 
-      await axios.post(CART_API, newCartItem)
+      dispatch(cartUpdate(CART_API, newCartItem))
 
       setDiameterIndex(null)
       setDoughIndex(null)

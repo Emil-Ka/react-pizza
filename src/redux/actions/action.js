@@ -51,3 +51,11 @@ export const cartFetchingError = () => {
     type: 'CART_FETCHING_ERROR'
   }
 }
+
+export const cartUpdate = async (url, data) => {
+  await axios.post(url, data)
+  return {
+    type: 'CART_UPDATE',
+    payload: data
+  }
+}
