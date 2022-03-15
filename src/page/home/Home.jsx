@@ -6,16 +6,20 @@ import Card from '../../components/Card'
 import Header from '../../components/Header'
 import Categories from '../../components/Categories'
 import Sort from '../../components/Sort'
-import {fetchPizzas} from '../../redux/actions/action'
+import {fetchPizzas, fetchCart} from '../../redux/actions/action'
 
 const Home = () => {
-  const _url = 'http://localhost:3001/pizzas/'
+  const PIZZAS_API = 'http://localhost:3001/pizzas'
+  const CART_API = 'http://localhost:3001/cart'
   const dispatch = useDispatch()
   const pizzas = useSelector(state => state ? state.pizzas : [])
-  console.log(pizzas)
+  const cart = useSelector(state => state ? state.cart : [])
+  console.log('pizza', pizzas)
+  console.log('cart', cart)
 
   useEffect(() => {
-    dispatch(fetchPizzas(_url))
+    dispatch(fetchPizzas(PIZZAS_API))
+    dispatch(fetchCart(CART_API))
   }, [])
 
   return (

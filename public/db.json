@@ -1,25 +1,25 @@
 {
   "pizzas": [
-      {
-        "id": 0,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-        "name": "Пепперони Фреш с перцем",
-        "types": [
-          1,
-          1
-        ],
-        "sizes": [
-          26,
-          30,
-          40
-        ],
-        "price": 803,
-        "category": 0,
-        "rating": 4
-      },
-      {
-        "id": 1,
-        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+    {
+      "id": 0,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
+      "name": "Пепперони Фреш с перцем",
+      "types": [
+        1,
+        1
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 803,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
       "name": "Сырная",
       "types": [
         1,
@@ -182,57 +182,43 @@
     },
     {
       "id": 2,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
-      "name": "Цыпленок барбекю",
-      "price": 295,
-      "doughLabel": "тонкое",
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
+      "name": "Пепперони Фреш с перцем",
+      "price": 803,
+      "doughLabel": "традиционное",
       "diameterLabel": "40 см."
     },
     {
       "id": 3,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "name": "Пепперони Фреш с перцем",
-      "price": 803,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
+      "name": "Кисло-сладкий цыпленок",
+      "price": 275,
+      "doughLabel": "традиционное",
+      "diameterLabel": "30 см."
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Чизбургер-пицца",
+      "price": 415,
       "doughLabel": "традиционное",
       "diameterLabel": "26 см."
     },
     {
-      "id": 4,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "name": "Пепперони Фреш с перцем",
-      "price": 803
-    },
-    {
       "id": 5,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "name": "Пепперони Фреш с перцем",
-      "price": 803,
-      "doughLabel": "традиционное",
-      "diameterLabel": "40 см."
-    },
-    {
-      "id": 6,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "name": "Пепперони Фреш с перцем",
-      "price": 803,
-      "doughLabel": "традиционное",
-      "diameterLabel": "40 см."
-    },
-    {
-      "id": 7,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "name": "Пепперони Фреш с перцем",
-      "price": 803,
-      "doughLabel": "традиционное",
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
+      "name": "Крэйзи пепперони",
+      "price": 580,
+      "doughLabel": "тонкое",
       "diameterLabel": "30 см."
     },
     {
       "id": 8,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "name": "Пепперони Фреш с перцем",
-      "price": 803,
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/ec29465e-606b-4a04-a03e-da3940d37e0e.jpg",
+      "name": "Четыре сезона",
+      "price": 395,
       "doughLabel": "тонкое",
-      "diameterLabel": "30 см."
+      "diameterLabel": "40 см."
     }
   ]
 }

@@ -1,6 +1,8 @@
 const initialState = {
   pizzas: [],
-  loadingStatus: 'idle'
+  pizzasLoadingStatus: 'idle',
+  cart: [],
+  cartLoadingStatus: 'idle'
 }
 
 const reducer = (state = initialState, action) => {
@@ -8,19 +10,35 @@ const reducer = (state = initialState, action) => {
     case 'PIZZAS_FETCHING':
         return {
           ...state,
-          loadingStatus: 'loading'
+          pizzasLoadingStatus: 'loading'
         }
     case 'PIZZAS_FETCHED':
         return {
           ...state,
-          loadingStatus: 'idle',
+          pizzasLoadingStatus: 'idle',
           pizzas: action.payload
         }
     case 'PIZZAS_FETCHING_ERROR':
         return {
           ...state,
-          loadingStatus: 'error'
+          pizzasLoadingStatus: 'error'
         }
+    case 'CART_FETCHING':
+      return {
+        ...state,
+        cartLoadingStatus: 'loading'
+      }
+    case 'CART_FETCHED':
+      return {
+        ...state,
+        cartLoadingStatus: 'idle',
+        cart: action.payload
+      }
+    case 'CART_FETCHING_ERROR':
+      return {
+        ...state,
+        cartLoadingStatus: 'error'
+      }
   }
 }
 

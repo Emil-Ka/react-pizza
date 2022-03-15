@@ -25,3 +25,29 @@ export const pizzasFetchingError = () => {
     type: 'PIZZAS_FETCHING_ERROR'
   }
 }
+
+export const fetchCart = (url) => async (dispatch) => {
+  dispatch(cartFetching())
+  await axios.get(url)
+    .then(res => dispatch(cartFetched(res.data)))
+    .catch(() => cartFetchingError())
+}
+
+export const cartFetching = () => {
+  return {
+    type: 'CART_FETCHING'
+  }
+}
+
+export const cartFetched = (cart) => {
+  return {
+    type: 'CART_FETCHED',
+    payload: cart
+  }
+}
+
+export const cartFetchingError = () => {
+  return {
+    type: 'CART_FETCHING_ERROR'
+  }
+}
