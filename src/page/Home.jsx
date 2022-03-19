@@ -1,12 +1,12 @@
-import {useEffect, useState} from 'react'
-import {useSelector, useDispatch} from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 
 import Card from '../components/Card'
 import Header from '../components/Header'
 import Categories from '../components/Categories'
 import Sort from '../components/Sort'
-import {fetchPizzas, fetchCart} from '../redux/actions/action'
+import { fetchPizzas, fetchCart } from '../redux/actions/action'
 
 const Home = () => {
   const PIZZAS_API = 'http://localhost:3001/pizzas'
@@ -43,27 +43,27 @@ const Home = () => {
 
   return (
     <>
-        <Header/>
-        <div className="home">
-          <div className="home__container">
-              <div className="home__content-top">
-                <Categories/>
-                <Sort/>
-              </div>
-              <div className="home__content">
-                <h1>{categoriesItems[categoryIndex]} пиццы</h1>
-                <div className="home__cards cards">
-                    {
-                      pizzas.map((item, i) => (
-                          <Card
-                            key={item.id}
-                            pizzas={pizzas[i]}/>
-                      ))
-                    }
-                </div>
-              </div>
+      <Header />
+      <div className="home">
+        <div className="home__container">
+          <div className="home__content-top">
+            <Categories />
+            <Sort />
+          </div>
+          <div className="home__content">
+            <h1>{categoriesItems[categoryIndex]} пиццы</h1>
+            <div className="home__cards cards">
+              {
+                pizzas.map((item, i) => (
+                  <Card
+                    key={item.id}
+                    pizzas={pizzas[i]} />
+                ))
+              }
+            </div>
           </div>
         </div>
+      </div>
     </>
   )
 }

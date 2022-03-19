@@ -1,8 +1,8 @@
-import {useState, useRef, useEffect} from 'react'
-import {useSelector, useDispatch} from 'react-redux'
+import { useState, useRef, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import sortSVG from '../assets/img/sort.svg'
-import {setSortIndex} from '../redux/actions/action'
+import { setSortIndex } from '../redux/actions/action'
 
 const Sort = () => {
   const [visiblePopup, setVisiblePopup] = useState(false)
@@ -32,28 +32,28 @@ const Sort = () => {
 
   return (
     <div className="sort" ref={sortRef}>
-        <div className="sort__label">
-          <img className={visiblePopup ? 'sort__icon--active' : 'sort__icon'} src={sortSVG} alt="sort"/>
-          <b>Сортировка по:</b>
-          <span onClick={changeVisiblePopup}>{sortItems[sortIndex]}</span>
-        </div>
-        {
-          visiblePopup ?
+      <div className="sort__label">
+        <img className={visiblePopup ? 'sort__icon--active' : 'sort__icon'} src={sortSVG} alt="sort" />
+        <b>Сортировка по:</b>
+        <span onClick={changeVisiblePopup}>{sortItems[sortIndex]}</span>
+      </div>
+      {
+        visiblePopup ?
           <div className="sort__popup">
-          <ul>
+            <ul>
               {
                 sortItems.map((item, i) => (
-                    <li 
-                      className={`sort__item ${sortIndex === i ? 'sort__item--active' : null}`}
-                      key={i}
-                      onClick={() => changeActiveItem(i)}>
-                      по {item}
-                    </li>
+                  <li
+                    className={`sort__item ${sortIndex === i ? 'sort__item--active' : null}`}
+                    key={i}
+                    onClick={() => changeActiveItem(i)}>
+                    по {item}
+                  </li>
                 ))
               }
-          </ul>
-        </div> : null
-        }
+            </ul>
+          </div> : null
+      }
     </div>
   )
 }

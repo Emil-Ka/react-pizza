@@ -6,18 +6,18 @@ import Home from '../page/Home'
 import Cart from '../page/Cart'
 
 const App = () => {
-  return (
-    <Router>
-      <Layout>
-          <div className="app">
-            <Routes>
-              <Route path="/" element={<Home/>}/>
-              <Route path="/cart" element={<Cart/>}/>
-            </Routes>
-          </div>
-      </Layout>
-    </Router>
-  )
+   return (
+   <Router>
+   <Layout>
+   <div className="app">
+   <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/cart" element={<Cart/>}/>
+   </Routes>
+   </div>
+   </Layout>
+   </Router>
+   )
 }
 
 export default App

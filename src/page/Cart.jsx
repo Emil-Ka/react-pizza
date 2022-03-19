@@ -2,8 +2,14 @@ import CartHeader from "../components/CartHeader"
 
 const Cart = () => {
   return (
-    <CartHeader/>
-    
+    <>
+      <CartHeader />
+      <div className="cart">
+        <div className="cart__container">
+
+        </div>
+      </div>
+    </>
   )
 }
 
