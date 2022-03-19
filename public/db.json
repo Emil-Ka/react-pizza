@@ -206,6 +206,14 @@
       "price": 415,
       "doughLabel": "традиционное",
       "diameterLabel": "30 см."
+    },
+    {
+      "id": "6f9e0f16-bba8-4925-be3b-66b4e0b697e8",
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
+      "name": "Цыпленок барбекю",
+      "price": 295,
+      "doughLabel": "тонкое",
+      "diameterLabel": "26 см."
     }
   ]
 }

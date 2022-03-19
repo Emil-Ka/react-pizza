@@ -12,9 +12,23 @@ const Home = () => {
   const PIZZAS_API = 'http://localhost:3001/pizzas'
   const CART_API = 'http://localhost:3001/cart'
   const dispatch = useDispatch()
+
   const pizzas = useSelector(state => {
     if (state) {
-      return state.pizzas.filter(item => item.categories.includes(state.categoryIndex))
+      switch (state.sortIndex) {
+        case 0: //Сортировка по рейтингу
+          return state.pizzas
+            .filter(item => item.categories.includes(state.categoryIndex))
+            .sort((a, b) => a.rating < b.rating ? 1 : -1)
+        case 1: //Сортировка по цене
+          return state.pizzas
+            .filter(item => item.categories.includes(state.categoryIndex))
+            .sort((a, b) => a.price > b.price ? 1 : -1)
+        case 2: //Сортировка по алфавиту
+          return state.pizzas
+            .filter(item => item.categories.includes(state.categoryIndex))
+            .sort((a, b) => a.name > b.name ? 1 : -1)
+      }
     }
     return []
   })

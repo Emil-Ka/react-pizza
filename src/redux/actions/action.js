@@ -66,3 +66,10 @@ export const setCategory = (categoryIndex) => {
     payload: categoryIndex
   }
 }
+
+export const setSortIndex = (sortIndex) => {
+  return {
+    type: 'SET_SORTINDEX',
+    payload: sortIndex
+  }
+}

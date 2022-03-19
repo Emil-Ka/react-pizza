@@ -1,12 +1,15 @@
 import {useState, useRef, useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 
 import sortSVG from '../assets/img/sort.svg'
+import {setSortIndex} from '../redux/actions/action'
 
 const Sort = () => {
   const [visiblePopup, setVisiblePopup] = useState(false)
-  const [activeItem, setActiveItem] = useState(0)
+  const sortIndex = useSelector(state => state ? state.sortIndex : 0)
+  const sortItems = useSelector(state => state ? state.sortItems : [])
+  const dispatch = useDispatch()
   const sortRef = useRef()
-  const sortItems = ['популярности', 'цене', 'алфавиту']
 
   const changeVisiblePopup = () => {
     setVisiblePopup(prev => !prev)
@@ -14,12 +17,12 @@ const Sort = () => {
 
   const closePopupOutside = (e) => {
     if (!e.path.includes(sortRef.current)) {
-        setVisiblePopup(false)
+      setVisiblePopup(false)
     }
   }
 
   const changeActiveItem = (index) => {
-    setActiveItem(index)
+    dispatch(setSortIndex(index))
     setVisiblePopup(false)
   }
 
@@ -32,7 +35,7 @@ const Sort = () => {
         <div className="sort__label">
           <img className={visiblePopup ? 'sort__icon--active' : 'sort__icon'} src={sortSVG} alt="sort"/>
           <b>Сортировка по:</b>
-          <span onClick={changeVisiblePopup}>{sortItems[activeItem]}</span>
+          <span onClick={changeVisiblePopup}>{sortItems[sortIndex]}</span>
         </div>
         {
           visiblePopup ?
@@ -41,7 +44,7 @@ const Sort = () => {
               {
                 sortItems.map((item, i) => (
                     <li 
-                      className={`sort__item ${activeItem === i ? 'sort__item--active' : null}`}
+                      className={`sort__item ${sortIndex === i ? 'sort__item--active' : null}`}
                       key={i}
                       onClick={() => changeActiveItem(i)}>
                       по {item}

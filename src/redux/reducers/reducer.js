@@ -5,7 +5,9 @@ const initialState = {
   cart: [],
   cartLoadingStatus: 'idle',
   categoryIndex: 0,
-  categoriesItems: ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
+  categoriesItems: ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'],
+  sortItems: ['популярности', 'цене', 'алфавиту'],
+  sortIndex: 0
 }
 
 const reducer = (state = initialState, action) => {
@@ -51,6 +53,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         categoryIndex: action.payload
+      }
+    case 'SET_SORTINDEX':
+      return {
+        ...state,
+        sortIndex: action.payload
       }
   }
 }
