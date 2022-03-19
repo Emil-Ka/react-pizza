@@ -1,9 +1,10 @@
 import CartHeader from "../components/CartHeader"
 
 const Cart = () => {
-   return (
-      <CartHeader/>
-   )
+  return (
+    <CartHeader/>
+    
+  )
 }
 
 export default Cart
