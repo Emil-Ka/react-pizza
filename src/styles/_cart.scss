@@ -98,13 +98,14 @@
 
 .cart-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   border-top: 1px solid #f4f4f4;
   padding: 30px 0;
 
   &__desc {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
     img {

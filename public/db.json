@@ -200,49 +200,31 @@
   ],
   "cart": [
     {
-      "id": "abe245bd-89fa-4962-bd99-cfe245bd607c",
+      "id": "81a6879d-bd95-4546-b94f-8b7c2368d09a",
       "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/ec29465e-606b-4a04-a03e-da3940d37e0e.jpg",
       "name": "Четыре сезона",
       "price": 395,
       "doughLabel": "тонкое",
-      "diameterLabel": "26 см.",
+      "diameterLabel": "30 см.",
       "_id": 8
     },
     {
-      "id": "d61bac05-c9af-487f-aeb1-214ffef2dee8",
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
-      "name": "Пепперони",
-      "price": 675,
-      "doughLabel": "традиционное",
+      "id": "4eb9632b-1dd2-4ff3-a30f-d4f56b84e147",
+      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+      "name": "Маргарита",
+      "price": 450,
+      "doughLabel": "толстое",
       "diameterLabel": "40 см.",
-      "_id": 6
+      "_id": 7
     },
     {
-      "id": "d3f8c8e9-7a69-4d9d-9785-bb554335217e",
+      "id": "81a6879d-bd95-4546-b94f-8b7c2368d09a",
       "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/ec29465e-606b-4a04-a03e-da3940d37e0e.jpg",
       "name": "Четыре сезона",
       "price": 395,
       "doughLabel": "тонкое",
-      "diameterLabel": "26 см.",
+      "diameterLabel": "30 см.",
       "_id": 8
-    },
-    {
-      "id": "5b4b16e5-179e-4459-9752-0d23cd9a844b",
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
-      "name": "Маргарита",
-      "price": 450,
-      "doughLabel": "тонкое",
-      "diameterLabel": "26 см.",
-      "_id": 7
-    },
-    {
-      "id": "21ecfc6f-77ce-425a-b44a-0cf8a3d74e2c",
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
-      "name": "Маргарита",
-      "price": 450,
-      "doughLabel": "тонкое",
-      "diameterLabel": "26 см.",
-      "_id": 7
     }
   ]
 }

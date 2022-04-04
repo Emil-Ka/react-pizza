@@ -1,3 +1,5 @@
+import { useSelector, useDispatch } from "react-redux"
+
 import CartHeader from "../components/CartHeader"
 import CartItem from '../components/cartItem'
 
@@ -6,9 +8,42 @@ import trashLogo from '../assets/img/trash.svg'
 import arrow from '../assets/img/arrow-right.svg'
 
 const Cart = () => {
+  const cart = useSelector(state => state ? state.cart : [])
+
+  const calcCount = (arr, _id, doughLabel, diameterLabel) => {
+    let count = 0
+    arr.forEach(item => {
+      if (item._id === _id && item.doughLabel === doughLabel && item.diameterLabel === diameterLabel) {
+        count++
+      }
+    })
+    return count
+  }
+
+  const cartWithoutRepeats = []
+
+  for (let i = 0; i < cart.length; i++) {
+    if (i === 0) {
+      cartWithoutRepeats.push(cart[i])
+      continue
+    }
+
+    let repeats = 0
+
+    for (let j = 0; j < cartWithoutRepeats.length; j++) {
+      if (JSON.stringify(cart[i]) === JSON.stringify(cartWithoutRepeats[j])) {
+        repeats++
+      }
+    }
+
+    if (!repeats) {
+      cartWithoutRepeats.push(cart[i])
+    }
+  }
+  
   return (
     <>
-      <CartHeader />
+      <CartHeader/>
       <div className="cart">
         <div className="cart__container">
           <div className="cart__top">
@@ -22,8 +57,20 @@ const Cart = () => {
             </div>
           </div>
           <div className="cart__content">
-            <CartItem/>
-            <CartItem/>
+            {
+              cartWithoutRepeats.map(item => {
+                return (
+                  <CartItem
+                    imageUrl={item.imageUrl}
+                    name={item.name}
+                    price={item.price}
+                    doughLabel={item.doughLabel}
+                    diameterLabel={item.diameterLabel}
+                    key={item.id}
+                    count={calcCount(cart, item._id, item.doughLabel, item.diameterLabel)}/>
+                )
+              })
+            }
           </div>
           <div className="cart__total">
             <div>

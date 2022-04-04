@@ -9,10 +9,6 @@ import Sort from '../components/Sort'
 import { fetchPizzas, fetchCart } from '../redux/actions/action'
 
 const Home = () => {
-  const PIZZAS_API = 'http://localhost:3001/pizzas'
-  const CART_API = 'http://localhost:3001/cart'
-  const dispatch = useDispatch()
-
   const pizzas = useSelector(state => {
     if (state) {
       switch (state.sortIndex) {
@@ -35,11 +31,6 @@ const Home = () => {
 
   const categoriesItems = useSelector(state => state ? state.categoriesItems : [])
   const categoryIndex = useSelector(state => state ? state.categoryIndex : 0)
-
-  useEffect(() => {
-    dispatch(fetchPizzas(PIZZAS_API))
-    dispatch(fetchCart(CART_API))
-  }, [])
 
   return (
     <>

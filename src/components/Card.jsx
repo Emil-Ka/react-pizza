@@ -15,6 +15,7 @@ const Card = (pizzas) => {
 
   const { imageUrl, name, price, sizes, types, id } = pizzas.pizzas
   const doughLabel = ['тонкое', 'традиционное']
+  const doughLabelForCart = ['тонкое', 'толстое']
   const diameterLabel = ['26 см.', '30 см.', '40 см.']
   const CART_API = 'http://localhost:3001/cart/'
 
@@ -56,7 +57,7 @@ const Card = (pizzas) => {
         imageUrl,
         name,
         price,
-        doughLabel: doughLabel[doughIndex],
+        doughLabel: doughLabelForCart[doughIndex],
         diameterLabel: diameterLabel[diameterIndex],
         _id: id
       }
