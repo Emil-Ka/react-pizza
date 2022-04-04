@@ -73,3 +73,10 @@ export const setSortIndex = (sortIndex) => {
     payload: sortIndex
   }
 }
+
+export const removeCartItem = (cartItemId) => {
+  return {
+    type: 'REMOVE_CARTITEM',
+    payload: cartItemId
+  }
+}

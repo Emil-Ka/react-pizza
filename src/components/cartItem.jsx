@@ -1,9 +1,17 @@
+import {useDispatch} from 'react-redux'
+import {removeCartItem} from '../redux/actions/action'
+
 import minusBtn from '../assets/img/minus.svg'
 import plusBtn from '../assets/img/plus.svg'
 import removeBtn from '../assets/img/cross.svg'
 
-const cartItem = ({imageUrl, doughLabel, diameterLabel, name, price, count}) => {
-  console.log(imageUrl, doughLabel, diameterLabel, name, price)
+const CartItem = ({imageUrl, doughLabel, diameterLabel, name, price, count, id}) => {
+  const dispatch = useDispatch()
+
+  const onRemoveCartItem = () => {
+    dispatch(removeCartItem(id))
+  }
+
   return (
     <div className="cart__cart-item cart-item">
       <div className="cart-item__desc">
@@ -19,9 +27,13 @@ const cartItem = ({imageUrl, doughLabel, diameterLabel, name, price, count}) => 
         <img src={plusBtn} alt="plus" className="cart-item__plus" />
       </div>
       <p className="cart-item__price">{price} p.</p>
-      <img src={removeBtn} alt="remove" className="cart-item__remove-btn" />
+      <img 
+        src={removeBtn} 
+        alt="remove" 
+        className="cart-item__remove-btn"
+        onClick={onRemoveCartItem}/>
     </div>
   )
 }
 
-export default cartItem
+export default CartItem

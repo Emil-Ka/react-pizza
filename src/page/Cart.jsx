@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux"
+import {Link} from 'react-router-dom'
 
 import CartHeader from "../components/CartHeader"
-import CartItem from '../components/cartItem'
+import CartItem from '../components/CartItem'
 
 import cartLogo from '../assets/img/cart-logo.svg'
 import trashLogo from '../assets/img/trash.svg'
@@ -9,6 +10,13 @@ import arrow from '../assets/img/arrow-right.svg'
 
 const Cart = () => {
   const cart = useSelector(state => state ? state.cart : [])
+  let totalPrice = 0
+  let countOfPizzas = 0
+
+  cart.forEach(item => {
+    totalPrice += item.price
+    countOfPizzas++
+  })
 
   const calcCount = (arr, _id, doughLabel, diameterLabel) => {
     let count = 0
@@ -67,6 +75,7 @@ const Cart = () => {
                     doughLabel={item.doughLabel}
                     diameterLabel={item.diameterLabel}
                     key={item.id}
+                    id={item._id}
                     count={calcCount(cart, item._id, item.doughLabel, item.diameterLabel)}/>
                 )
               })
@@ -74,14 +83,14 @@ const Cart = () => {
           </div>
           <div className="cart__total">
             <div>
-              <p>Всего пицц: <span className="--fat">3 шт.</span></p>
-              <p>Сумма заказа: <span className="--fat --orange">900 р.</span></p>
+              <p>Всего пицц: <span className="--fat">{countOfPizzas} шт.</span></p>
+              <p>Сумма заказа: <span className="--fat --orange">{totalPrice} р.</span></p>
             </div>
             <div>
-              <a href="#" className="cart__back">
+              <Link to="/" className="cart__back">
                 <img src={arrow} alt="back" />
                 <span>Вернуться назад</span>
-              </a>
+              </Link>
               <button className="cart__pay-btn">
                 <span>Оплатить сейчас</span>
               </button>
