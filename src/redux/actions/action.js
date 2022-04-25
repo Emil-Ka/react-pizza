@@ -74,9 +74,12 @@ export const setSortIndex = (sortIndex) => {
   }
 }
 
-export const removeCartItem = (cartItemId) => {
+export const removeCartItem = async (cartItemProps) => {
+  await axios.delete('http://localhost:3001/cart', {
+    data: {...cartItemProps}
+  })
   return {
     type: 'REMOVE_CARTITEM',
-    payload: cartItemId
+    payload: cartItemProps._id
   }
 }

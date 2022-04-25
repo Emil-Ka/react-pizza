@@ -235,5 +235,38 @@
       "diameterLabel": "26 см.",
       "_id": 6
     }
-  ]
+  ],
+  "cards": {
+    "2": [
+      {
+        "id": "83740a5c-d4e5-4684-376730efd",
+        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
+        "name": "Пепперони",
+        "price": 675,
+        "doughLabel": "толстое",
+        "diameterLabel": "26 см.",
+        "_id": 6
+      },
+      {
+        "id": "83740a-4684-376730efd",
+        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
+        "name": "Пепперони",
+        "price": 675,
+        "doughLabel": "толстое",
+        "diameterLabel": "26 см.",
+        "_id": 1
+      }
+    ],
+    "5": [
+      {
+        "id": "4eb9632b-1dd2-4ff3-a30f-d4f56b84e147",
+        "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
+        "name": "Маргарита",
+        "price": 450,
+        "doughLabel": "толстое",
+        "diameterLabel": "40 см.",
+        "_id": 7
+      }
+    ]
+  }
 }

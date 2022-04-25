@@ -5,11 +5,12 @@ import minusBtn from '../assets/img/minus.svg'
 import plusBtn from '../assets/img/plus.svg'
 import removeBtn from '../assets/img/cross.svg'
 
-const CartItem = ({imageUrl, doughLabel, diameterLabel, name, price, count, id}) => {
+const CartItem = (props) => {
+  const {imageUrl, doughLabel, diameterLabel, name, price, count, id} = props
   const dispatch = useDispatch()
 
   const onRemoveCartItem = () => {
-    dispatch(removeCartItem(id))
+    dispatch(removeCartItem(props))
   }
 
   return (

@@ -21,7 +21,7 @@ const Card = (pizzas) => {
 
   let isItemInCart = 0
   cart.forEach(item => {
-    if (item._id === id) {
+    if (item._zid === id) {
       isItemInCart++
     }
   })
